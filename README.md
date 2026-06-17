@@ -130,6 +130,46 @@ The EDA investigates:
 
 ---
 
+## Data Version Control (DVC)
+
+This project uses DVC (Data Version Control) to track datasets separately from Git.
+
+### Setup
+
+Install DVC:
+
+```bash
+pip install dvc
+```
+
+Initialize DVC:
+
+```bash
+dvc init
+```
+
+Configure the local remote storage:
+
+```bash
+mkdir ../dvc-storage
+dvc remote add -d localstorage ../dvc-storage
+```
+
+### Retrieve Data
+
+Pull tracked datasets:
+
+```bash
+dvc pull
+```
+
+### Tracked Versions
+
+- Raw dataset: `data/raw/insurance_data.csv`
+- Cleaned dataset: `data/processed/insurance_data_clean.csv`
+
+Both datasets are versioned through DVC and stored in the configured local remote.
+
 ## CI/CD Pipeline
 
 GitHub Actions is configured to:
